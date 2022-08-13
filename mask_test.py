@@ -47,8 +47,8 @@ def img_capture():
 	# img_counter = img_counter + 1
 
 def sent_mail():
-	sender_email = "deepblueproject9@gmail.com"
-	rec_email = "deepblueproject9@gmail.com"
+	sender_email = ""   #enter the sender email
+	rec_email = ""	    #enter the receiver email (or it can be same as sender email)
 	subject = "Mask wearing case"
 
 	msg = MIMEMultipart()
@@ -72,7 +72,7 @@ def sent_mail():
 
 	server = smtplib.SMTP("smtp.gmail.com", 587)
 	server.starttls()
-	server.login(sender_email, "jee@61900")
+	server.login(sender_email, "")      #enter the password of senders email
 	server.sendmail(sender_email, rec_email, text)
 	print("message sent!!!!")
 	server.quit()
